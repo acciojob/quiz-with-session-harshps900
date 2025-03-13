@@ -21,6 +21,7 @@ function renderQuestions() {
   questionsElement.innerHTML = ""; // Clear the element
   questions.forEach((question, i) => {
     const questionElement = document.createElement("div");
+    questionElement.id = `question-${i}`;  // Set an id for each question div
     questionElement.innerHTML = `<p>${question.question}</p>`;
 
     question.choices.forEach((choice) => {
@@ -49,7 +50,6 @@ function renderQuestions() {
     questionsElement.appendChild(questionElement);
   });
 }
-
 // Calculate and display the score
 function calculateScore() {
   let score = 0;
